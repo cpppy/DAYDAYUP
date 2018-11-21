@@ -1,0 +1,23 @@
+
+sudo fdisk -l
+
+sudo fdisk /dev/vdc
+
+# enter conmand
+n  # add partition
+e  # extend partition
+... # default
+# exit command
+
+mkfs.ext4 /dev/vdc
+
+# build a dir for mount
+sudo mkdir /udisk
+
+sudo mount -a ext4 /dev/vdc /udisk
+
+sudo vim /etc/fstab
+# add : /dev/vdc /udisk ext4 defaults 1 1
+
+df -h
+
